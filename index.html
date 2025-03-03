@@ -3,68 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon...</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Business - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 10px 0;
+            box-shadow: 0 4px 2px -2px gray;
+            text-align: center;
+        }
+        header nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            overflow: hidden;
+            gap: 20px;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        #countdown {
-            font-size: 1.5rem;
+        header nav a {
+            text-decoration: none;
+            color: #333;
             font-weight: bold;
         }
-        .animated-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%);
-            animation: animateBg 10s infinite alternate;
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #f8f8f8;
         }
-        @keyframes animateBg {
-            from { transform: scale(1); opacity: 0.8; }
-            to { transform: scale(1.2); opacity: 0.5; }
+        .hero h1 {
+            font-size: 2.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .cta-button {
+            background: #007BFF;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #0056b3;
+        }
+        .section {
+            padding: 40px 20px;
+            margin-top: 20px;
+        }
+        .section h2 {
+            font-size: 2em;
+            text-align: center;
+        }
+        .testimonials,
+        .faq {
+            background-color: #f0f0f0;
+        }
+        .testimonial {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .testimonial img {
+            width: 80px;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <div class="animated-bg"></div>
-    <div>
-        <h1>Coming Soon...</h1>
-        <p id="countdown">Launching in: <span id="timer">00:00:00</span></p>
+
+<header>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#problem">The Problem</a>
+        <a href="#solution">The Solution</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#action-plan">Action Plan</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Get Started</a>
+    </nav>
+</header>
+
+<section id="hero" class="hero">
+    <h1>We Help You Solve Your Problems with Simple, Effective Solutions</h1>
+    <p>Take control of your business and make real improvements with our expert guidance.</p>
+    <a href="#cta" class="cta-button">Book Your Consultation</a>
+    <div class="social-proof">
+        <p><strong>Trusted by:</strong> <img src="company-logos.png" alt="Company logos"></p>
     </div>
+</section>
 
-    <script>
-        function startCountdown() {
-            const launchDate = new Date("2025-04-01T00:00:00").getTime();
-            setInterval(function() {
-                const now = new Date().getTime();
-                const timeLeft = launchDate - now;
+<section id="problem" class="section">
+    <h2>The Problem</h2>
+    <p>The health of your business is too important to neglect.</p>
+    <ul>
+        <li>Client work takes all your time</li>
+        <li>You feel behind instead of proactive</li>
+        <li>You’re working late and missing out on life</li>
+    </ul>
+</section>
 
-                if (timeLeft > 0) {
-                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                    document.getElementById("timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                } else {
-                    document.getElementById("countdown").innerText = "We're live!";
-                }
-            }, 1000);
-        }
-        startCountdown();
-    </script>
+<section id="solution" class="section">
+    <h2>The Solution</h2>
+    <p>We offer personalized solutions tailored to your needs. Our expertise allows us to guide you through your struggles and set you on the path to success.</p>
+    <p>Our team understands your challenges because we’ve faced them ourselves.</p>
+    <img src="team-image.jpg" alt="Our Team">
+</section>
+
+<section id="benefits" class="section">
+    <h2>The Benefits</h2>
+    <p>With our solution, you will:</p>
+    <ul>
+        <li>Save time and regain control over your schedule</li>
+        <li>Feel proactive and stay ahead of your business</li>
+        <li>Enjoy a better work-life balance</li>
+    </ul>
+    <img src="benefits-image.jpg" alt="Results and Benefits">
+</section>
+
+<section id="action-plan" class="section">
+    <h2>Action Plan</h2>
+    <p>How it works:</p>
+    <ol>
+        <li>Step 1: Let’s get the ball rolling with an initial consultation.</li>
+        <li>Step 2: We will review your goals and work with you to implement the right strategy.</li>
+        <li>Step 3: Achieve the transformation you’re aiming for.</li>
+    </ol>
+</section>
+
+<section id="testimonials" class="testimonials section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+        <img src="client-photo.jpg" alt="Client Photo">
+        <p><strong>Before:</strong> “I was struggling with managing my time.” <br><strong>After:</strong> “Now, I have more control and my business has grown by 20%!”</p>
+        <p>⭐⭐⭐⭐⭐</p>
+    </div>
+</section>
+
+<section id="faq" class="faq section">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q1:</strong> How does this work? <br><strong>A:</strong> We offer a personalized approach tailored to your business.</p>
+    <p><strong>Q2:</strong> What if I don’t have time? <br><strong>A:</strong> We ensure that our solution saves you time in the long run.</p>
+</section>
+
+<section id="cta" class="section">
+    <h2>Ready to get started?</h2>
+    <a href="https://calendly.com/your-booking-link" class="cta-button">Book Your Consultation Now</a>
+</section>
+
 </body>
 </html>
-
