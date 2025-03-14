@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://yourdronecompany.com',
+  site: 'https://www.huizen.co.za',
 });
